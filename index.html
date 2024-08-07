@@ -56,34 +56,18 @@
     </header>
 
     <main class="container mx-auto px-4 py-8">
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-                <a href="tel:+52(614)1097387" class="text-gray-800 hover:text-gray-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-8 h-8 mx-auto mb-2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-                    </svg>
-                    Phone Number
-                </a>
-            </div>
-            <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-                <a href="https://www.linkedin.com/in/miguel-ruiz-858b28230" class="text-gray-800 hover:text-gray-600">
-                    <img src="https://skillicons.dev/icons?i=linkedin" class="w-8 h-8 mx-auto mb-2" />
-                    LinkedIn
-                </a>
-            </div>
-            <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-                <a href="https://github.com/MiguelR222" class="text-gray-800 hover:text-gray-600">
-                    <img src="https://skillicons.dev/icons?i=github" class="w-8 h-8 mx-auto mb-2" />
-                    GitHub
-                </a>
-            </div>
-            <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-                <a href="mailto:miguel.ruiz0652@gmail.com" class="text-gray-800 hover:text-gray-600">
-                    <img src="https://skillicons.dev/icons?i=gmail" class="w-8 h-8 mx-auto mb-2" />
-                    Email
-                </a>
+        <section class="bg-white rounded-lg shadow-lg p-6 text-center mb-8">
+            <img src="https://media.licdn.com/dms/image/D5603AQE4fIcd202bfw/profile-displayphoto-shrink_200_200/0/1701467907908?e=1728518400&v=beta&t=9VhJ3bxqwSEYVr5Ga0dCCPBoJ91gmhu349vV6s7kyXA" alt="Miguel Ruiz" class="w-32 h-32 rounded-full mx-auto mb-4">
+            <h2 class="text-3xl font-bold text-gray-800">About Me</h2>
+            <button id="aboutMeToggle" class="mt-4 text-blue-500 underline md:hidden">Read More</button>
+            <div id="aboutMeContent" class="text-gray-600 mt-4 hidden md:block">
+                Hello! I'm Miguel Ruiz, a top-performing Information Technologies and Telecommunications student at La Salle University Chihuahua, 
+                with a proven track record in developing innovative tech solutions. My projects include Suggestify, a music recommendation app 
+                using Next.js and Spotify's API; DesignHub CMS, a versatile content management system for creating 
+                stunning websites; MovieMatch, a React Native app for discovering movies and TV series; Report Generator, a Python 
+                tool automating report creation with Google Calendar API. Proficient in Python, JavaScript, and various frameworks, 
+                I bring a blend of technical expertise and practical experience. Connect with me on LinkedIn or explore my projects 
+                on GitHub. Let's create something amazing together!
             </div>
         </section>
 
@@ -112,7 +96,6 @@
                             features two main sections: one for music suggestions based on user searches and another that offers 
                             recommendations from a list of the user's top tracks. Users can effortlessly save these suggestions 
                             to their Spotify playlists, making music discovery and management both intuitive and enjoyable.</p>
-                        </p>
                         <a href="https://github.com/MiguelR222/Suggestify" class="text-blue-500 underline mt-4 block">Repository</a>
                     </div>
                     <div class="carousel-item bg-white rounded-lg shadow-lg p-6">
@@ -159,7 +142,22 @@
     </main>
 
     <footer class="bg-white shadow py-6">
-        <div class="container mx-auto text-center text-gray-600">
+
+        <div class="container mx-auto px-4 py-6">
+            <h2 class="text-2xl font-bold text-gray-800 text-center">Contact Me</h2>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="mailto:miguel.ruiz0652@gmail.com" class="text-gray-800 hover:text-gray-600">
+                    <img src="https://skillicons.dev/icons?i=gmail" class="w-8 h-8" alt="Email" />
+                </a>
+                <a href="https://www.linkedin.com/in/miguel-ruiz-858b28230" class="text-gray-800 hover:text-gray-600">
+                    <img src="https://skillicons.dev/icons?i=linkedin" class="w-8 h-8" alt="LinkedIn" />
+                </a>
+                <a href="https://github.com/MiguelR222" class="text-gray-800 hover:text-gray-600">
+                    <img src="https://skillicons.dev/icons?i=github" class="w-8 h-8" alt="GitHub" />
+                </a>
+            </div>
+        </div>
+        <div class="text-l container mx-auto text-center text-gray-600">
             &copy; 2024 Miguel Ruiz. All rights reserved.
         </div>
     </footer>
@@ -190,6 +188,18 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             showSlide(currentSlide);
+        });
+    </script>
+    <script>
+        document.getElementById('aboutMeToggle').addEventListener('click', function() {
+            const content = document.getElementById('aboutMeContent');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                this.textContent = 'Read Less';
+            } else {
+                content.classList.add('hidden');
+                this.textContent = 'Read More';
+            }
         });
     </script>
 </body>
